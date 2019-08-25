@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class FindNonDuplicateinArray
+    {
+        static void PrintNonDuplicate(int[] arr)
+        {
+            Console.WriteLine("The non duplicate is..");
+            Dictionary<int,int> termsList = new  Dictionary<int,int>();
+
+            for (int i = 0; i < arr.Length; i++)
+             {
+                if (termsList.ContainsKey(arr[i])) {
+                    termsList[arr[i]] = termsList[arr[i]] + 1;               
+                } else {
+                  
+                    termsList.Add(arr[i], 1);
+                }
+        
+
+               
+            
+            
+            }
+
+            Console.WriteLine("This is not a duplicate.." + termsList.Single( x=> x.Value ==1).Key);
+        
+        }
+
+
+
+        static void Main(string[] args)
+        {
+            int[] arr = new int[11] {1, 1, 2, 2, 3, 3, 4, 50, 50, 65, 65};
+
+            PrintNonDuplicate(arr);
+
+        }
+    }
+}
+
+   
+  
