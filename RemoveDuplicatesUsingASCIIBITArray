@@ -1,1 +1,43 @@
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class PRogram
+    {
+
+//        // USe ASCII Bit array to mark and work on duplicates
+        static string RemoveDupes(char[] arr, int arr_size)
+        {
+            int res = 0;
+            int[] table = new int[256];
+            string final = String.Empty;
+            for (int i = 0; i < arr_size; i++)
+            {
+                if (!Convert.ToBoolean(table[arr[i]]))
+                {         
+                    table[arr[i]] = 1;
+                    final += arr[i];
+                }
+           
+            }
+            return final;
+        } 
+
+
+        static void Main(string[] args)
+        {
+            char[] arr = "geeksforgeeks".ToCharArray();
+            int n = arr.Length;
+            Console.Write(RemoveDupes(arr, n)); 
+            
+        }
+    }
+}
+
+   
+  
