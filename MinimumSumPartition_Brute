@@ -1,0 +1,65 @@
+// ConsoleApplication2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+#include <iostream>
+#include<conio.h>
+#include <sstream>
+#include<stdio.h>
+#include<stdlib.h>
+#include <queue>
+#include <unordered_set>
+
+using namespace std;
+
+
+// Minimum Sum Partition
+
+
+int SumQuery(int mat[], int N)
+{
+
+	// FindoverallSum
+	// find Avg and see which other is close
+	
+	int sumTillNow = 0;
+	int AvgValue = 0;
+	for (int i =0; i < N; i++) {
+			sumTillNow += mat[i];
+	
+	}
+
+	AvgValue = sumTillNow / 2;
+    sumTillNow = 0;
+	for (int i = 0; i < N ; i++) {
+		sumTillNow += mat[i];
+		if (sumTillNow >= AvgValue)
+		{
+		    // return the index
+			return i;
+		}
+
+
+
+
+	}
+
+
+
+}
+
+
+int main()
+{
+	int size = 4;
+	int* myarr = new int[1, 6, 5, 11]; 
+	int balance[4] = { 1, 6, 5, 11 };
+	int pivot = SumQuery(balance, size);
+
+	// 0  to pivot index is one set and the rest is the other. Their differnce gives the minimum difference.
+	/// Find the maximum within the array
+	// using Kadane to find maxinmum subarray
+	// the rest is the second array
+	return 0;
+}
