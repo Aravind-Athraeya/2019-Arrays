@@ -30,7 +30,7 @@ namespace ConsoleApplication1
 
             Console.WriteLine("This is not a duplicate.." + termsList.Single( x=> x.Value ==1).Key);
         
-        }
+        } 
 
 
 
